@@ -8,3 +8,6 @@ jobs:
     steps:
       - name: Saying hi
         run: echo "This is the first step of my first job."
+  
+      - name: Install something
+        run: apt install imagemagick
