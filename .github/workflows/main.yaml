@@ -4,16 +4,12 @@ jobs:
 
   test-python-versions:
     name: Check Python ${{ matrix.python-version }} on Ubuntu
-    continue-on-error: ${{ matrix.allow_failure }}
     runs-on: [ubuntu-latest, macos-latest, windows-latest]
     strategy:
       fail-fast: false
       matrix:
         python-version: ["3.10", "3.11"]
         allow-failure: [false]
-        include:
-          - python-version: "3.12.0-beta.4"
-            allow-failure: true
     steps:
       - uses: actions/checkout@v3
 
