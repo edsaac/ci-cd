@@ -10,4 +10,4 @@ jobs:
         run: echo "This is the first step of my first job."
   
       - name: Install something
-        run: apt install imagemagick
+        run: sudo apt install imagemagick
