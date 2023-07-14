@@ -1,0 +1,60 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "package"
+version = "0.1.0"
+authors = [
+  { name="Example Author", email="author@example.com" },
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+  "numpy>=1.18",
+]
+
+
+[project.optional-dependencies]
+test = ["pytest>=6"]
+docs = [
+  "myst_parser >=0.13",
+  "sphinx >=4.0",
+  "furo",
+]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = ["-ra", "--showlocals", "--strict-markers", "--strict-config"]
+xfail_strict = true
+filterwarnings = ["error"]
+log_cli_level = "info"
+testpaths = [
+  "tests",
+]
+
+[tool.ruff]
+select = [
+  "E", "F", "W", # flake8
+  "B",           # flake8-bugbear
+  "I",           # isort
+  "PGH",         # pygrep-hooks
+  "RUF",         # Ruff-specific
+  "UP",          # pyupgrade
+]
+extend-ignore = [
+  "E501",   # Line too long
+]
+target-version = "py38"
+src = ["src"]
+unfixable = [
+  "F841", # Removes unused variables
+]
+
