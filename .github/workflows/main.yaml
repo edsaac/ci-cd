@@ -7,6 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Saying hi
-        run: |
-          echo "This is the first step of my first job."
-          echo $?
+        run: echo "This is the first step of my first job."
