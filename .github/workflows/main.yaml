@@ -3,8 +3,10 @@ name: example
 on: push
 
 jobs:
-  job_1:
+  greeting:
     runs-on: ubuntu-latest
     steps:
-      - name: My first step
-        run: echo This is the first step of my first job.
+      - name: Saying hi
+        run: |
+          echo "This is the first step of my first job."
+          echo $?
